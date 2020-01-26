@@ -10,6 +10,17 @@ module.exports = {
     .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
       .set('_c', resolve('src/components'))
   },
-  productionSourceMap: false
-
+  productionSourceMap: false,
+  devServer: {
+    proxy: {
+      '/hug-web': {
+        target: 'http://www.lanniuh.com/',
+        changeOrigin: true,
+      },
+      '/': {
+        target: 'https://wuhan.lanniuh.com/',
+        changeOrigin: true,
+      },
+    }
+  }
 };

@@ -2,15 +2,14 @@
   <div>
     <van-nav-bar title="身份验证" class="navbar" />
     <div class="content">
-
       <van-field placeholder="姓名" v-model="name"  :error-message="nameError" left-icon="manager-o" size="large" required/>
       <van-field placeholder="手机号码" v-model="phoneNumber" left-icon="phone-o" :error-message="phoneNumberError" size="large" required/>
       <van-field placeholder="短信验证码" v-model="verification" type="text" left-icon="chat-o" size="large" :error-message="verificationError" required>
         <VerifyCodeBtn slot="button"  @sendVerifyCode="sendVerifyCode" :phoneNumber="phoneNumber" />
       </van-field>
-      <div class="button-wrap">
-        <van-button size="large" @click="handleLogin" type="info" round :disabled="!phoneNumber || !name || !verification">登录</van-button>
-      </div>
+    </div>
+    <div class="button-wrap">
+      <van-button size="large" @click="handleLogin" type="info" round :disabled="!phoneNumber || !name || !verification">登录</van-button>
     </div>
   </div>
 </template>
@@ -84,14 +83,15 @@ export default {
   .content{
     width: 100%;
     height: 100%;
-    padding: 25px 15px;
+    padding: 15px;
     box-sizing: border-box;
     background-color: #fff;
-    .button-wrap{
-      width: 100%;
-      height: auto;
-      margin-top: 25px;
-    }
+
+  }
+  .button-wrap{
+    height: auto;
+    padding: 25px 15px;
+
   }
   .more-wrap{
     display: flex;
