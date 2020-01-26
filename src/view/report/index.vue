@@ -63,7 +63,7 @@
     },
     methods: {
       submit () {
-        this.$router.push('/record')
+        this.$router.push('/record/123')
         /*      let data = {}
               this.$axios.post('/user/login', data).then(res => {
                 if (res.success) {

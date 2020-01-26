@@ -12,7 +12,7 @@ const routes = [
     name: 'home',
     component: () => import('./view/home'),
     meta: {
-      title: '风险人员跟踪'
+      title: '武汉新型肺炎风险人员跟踪'
     }
   },
   {

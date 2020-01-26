@@ -1,20 +1,27 @@
 <template>
 <div>
+  <van-steps :active="active">
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+    <van-step >第1天</van-step>
+  </van-steps>
   <div class="content body-box-shadow">
-    <van-steps :active="active">
-      <van-step>买家下单</van-step>
-      <van-step>商家接单</van-step>
-      <van-step>买家提货</van-step>
-      <van-step>交易完成</van-step>
-    </van-steps>
-    <van-field  v-model="text" input-align="right" label="姓名" />
-    <van-cell v-if="fromType=='3'" title="与您的关系" :value="relationName" is-link @click="show3=true"/>
-    <van-cell v-if="fromType!=='1'"  title="离开武汉日期" :value="date" is-link @click="show2=true"/>
+    <van-cell title="日期" input-align="right"  :value="date" />
     <van-cell title="目前所在地址" :value="areas" is-link @click="show=true"/>
-    <van-field v-if="fromType=='3'"  v-model="patientMobile" input-align="right" type="tel" label="他的手机号" />
+    <van-cell title="伴随症状" :value="relationName" is-link @click="show2=true"/>
   </div>
   <div class="button-wrap">
-    <van-button size="large" @click="submit" type="info" round >{{fromType!=='3' ? '下一步' : '提交'}}</van-button>
+    <van-button size="large" @click="submit" type="info" round >提交</van-button>
   </div>
   <van-popup
           v-model="show"
