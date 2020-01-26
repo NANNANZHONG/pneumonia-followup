@@ -15,6 +15,9 @@
     <van-step >第1天</van-step>
     <van-step >第1天</van-step>
   </van-steps>
+  <div>
+
+  </div>
   <div class="content body-box-shadow">
     <van-cell title="日期" input-align="right"  :value="date" />
     <van-cell title="目前所在地址" :value="areas" is-link @click="show=true"/>
